@@ -204,12 +204,12 @@ const PROJECTS = [
     ],
     tech: ["Python", "FastAPI", "LangChain", "Groq · Llama-3", "Tavily", "Next.js 16", "TypeScript"],
     media: [
-      { kind: "video" as const, src: "/DEMO.mp4", caption: "Live demo" },
-      { kind: "image" as const, src: "/1-dashboard.png", caption: "Dashboard" },
-      { kind: "image" as const, src: "/2-generation.png", caption: "Live generation" },
-      { kind: "image" as const, src: "/3-review.png", caption: "Critique" },
-      { kind: "image" as const, src: "/4-compare-setup.png", caption: "Compare setup" },
-      { kind: "image" as const, src: "/5-compare-result.png", caption: "Compare result" },
+      { kind: "video" as const, src: "./DEMO.mp4", caption: "Live demo" },
+      { kind: "image" as const, src: "./1-dashboard.png", caption: "Dashboard" },
+      { kind: "image" as const, src: "./2-generation.png", caption: "Live generation" },
+      { kind: "image" as const, src: "./3-review.png", caption: "Critique" },
+      { kind: "image" as const, src: "./4-compare-setup.png", caption: "Compare setup" },
+      { kind: "image" as const, src: "./5-compare-result.png", caption: "Compare result" },
     ],
   },
   {
@@ -233,13 +233,13 @@ const PROJECTS = [
     ],
     tech: ["React", "Spring Boot", "MySQL", "Docker", "JWT", "Apache POI"],
     media: [
-      { kind: "image" as const, src: "/admin_dashboard.png", caption: "Admin dashboard" },
-      { kind: "image" as const, src: "/student_dashboard.png", caption: "Student view" },
-      { kind: "image" as const, src: "/weekly_timetable.png", caption: "Weekly timetable" },
-      { kind: "image" as const, src: "/faculty_management.png", caption: "Faculty mgmt" },
-      { kind: "image" as const, src: "/faculty_requests.png", caption: "Requests" },
-      { kind: "image" as const, src: "/csv_upload.png", caption: "Bulk CSV" },
-      { kind: "image" as const, src: "/login_page.png", caption: "Auth" },
+      { kind: "image" as const, src: "./admin_dashboard.png", caption: "Admin dashboard" },
+      { kind: "image" as const, src: "./student_dashboard.png", caption: "Student view" },
+      { kind: "image" as const, src: "./weekly_timetable.png", caption: "Weekly timetable" },
+      { kind: "image" as const, src: "./faculty_management.png", caption: "Faculty mgmt" },
+      { kind: "image" as const, src: "./faculty_requests.png", caption: "Requests" },
+      { kind: "image" as const, src: "./csv_upload.png", caption: "Bulk CSV" },
+      { kind: "image" as const, src: "./login_page.png", caption: "Auth" },
     ],
   },
 ];
@@ -537,7 +537,7 @@ function Hero() {
           {/* Main profile photo */}
           <div className="relative w-32 h-32 sm:w-44 sm:h-44 rounded-full overflow-hidden shadow-2xl">
             <img
-              src="/profile.png"
+              src="./profile.png"
               alt="Portrait of Yash Vardhan"
               width={176}
               height={176}
