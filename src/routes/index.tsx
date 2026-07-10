@@ -258,6 +258,7 @@ const EXPERIENCE = [
     role: "Python Developer Intern",
     org: "DGPL",
     dates: "Sep 2025 — Mar 2026",
+    link: "https://drive.google.com/file/d/1xaDeQRwV7FEJcvfTwm4nMYPKES2tUBZP/view?usp=sharing",
     bullets: [
       "Developed and maintained Python-based applications and backend modules",
       "Assisted in API development, testing, debugging, and feature implementation",
@@ -274,8 +275,8 @@ const EDUCATION = [
 ];
 
 const CERTS = [
-  { label: "IBM Machine Learning Professional", meta: "Coursera · JD1TYDY5QBH", year: "2025" },
-  { label: "Deloitte Australia — Tech Job Simulation", meta: "Forage", year: "2026" },
+  { label: "IBM Machine Learning Professional", meta: "Coursera · JD1TYDY5QBH", year: "2025", link: "https://drive.google.com/file/d/1BgxFyttFrIejjsiX7gqee-PmY1gk6Xsv/view?usp=sharing" },
+  { label: "Deloitte Australia — Tech Job Simulation", meta: "Forage", year: "2026", link: "https://drive.google.com/file/d/1s0Kw80lsmZ6VnzRh0JTsY5BQ-UQjgYnS/view?usp=sharing" },
 ];
 
 const ACHIEVEMENTS = [
@@ -1246,7 +1247,14 @@ function Experience() {
                     <div className="mono-label mt-1">{x.org}</div>
                   </div>
                 </div>
-                <div className="mono-label ion-text">{x.dates}</div>
+                <div className="flex flex-col items-end gap-2">
+                  <div className="mono-label ion-text">{x.dates}</div>
+                  {x.link && (
+                    <a href={x.link} target="_blank" rel="noopener noreferrer" className="text-xs text-[color:var(--ion)] hover:underline flex items-center gap-1">
+                      Certificate <ArrowUpRight className="h-3 w-3" />
+                    </a>
+                  )}
+                </div>
               </div>
               <ul className="mt-6 space-y-2">
                 {x.bullets.map((b) => (
@@ -1305,7 +1313,15 @@ function Credentials() {
               {CERTS.map((c) => (
                 <div key={c.label} className="panel px-5 py-4 flex items-center justify-between gap-4">
                   <div className="min-w-0">
-                    <div className="text-[color:var(--foreground)] font-medium truncate">{c.label}</div>
+                    <div className="text-[color:var(--foreground)] font-medium truncate">
+                      {c.link ? (
+                        <a href={c.link} target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--ion)] transition-colors inline-flex items-center gap-1">
+                          {c.label} <ArrowUpRight className="h-3 w-3 shrink-0" />
+                        </a>
+                      ) : (
+                        c.label
+                      )}
+                    </div>
                     <div className="mono-label mt-1 truncate">{c.meta}</div>
                   </div>
                   <div className="mono-label ion-text shrink-0">{c.year}</div>
