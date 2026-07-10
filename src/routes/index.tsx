@@ -542,6 +542,7 @@ function Hero() {
               alt="Portrait of Yash Vardhan"
               width={176}
               height={176}
+              fetchPriority="high"
               className="h-full w-full rounded-full object-cover bg-black"
             />
             <div

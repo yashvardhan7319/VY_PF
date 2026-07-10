@@ -14,9 +14,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="preload" as="image" href="/VY_PF/profile.png" />
   </head>
-  <body>
+  <body style="background-color: #030712;">
+    <style>
+      #global-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: #030712;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease-out;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255,255,255,0.1);
+        border-top-color: #38bdf8;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    <div id="global-loader">
+      <div class="spinner"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('global-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 500);
+        }
+      });
+      // Fallback in case load takes too long (e.g. slow network for video)
+      setTimeout(() => {
+        const loader = document.getElementById('global-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 500);
+        }
+      }, 3000); // 3 seconds maximum loading screen
+    </script>
   </body>
 </html>
