@@ -269,6 +269,16 @@ const PROJECTS = [
       { kind: "image" as const, src: "./devassist-docs.png", caption: "Knowledge Base" },
       { kind: "image" as const, src: "./devassist-review.png", caption: "AI Code Review" },
       { kind: "image" as const, src: "./devassist-search.png", caption: "Semantic Search" },
+      { kind: "image" as const, src: "./devassist-orchestration.png", caption: "Orchestration & Analytics" },
+      { kind: "image" as const, src: "./devassist-workspace.png", caption: "File Explorer & Workspace" },
+      { kind: "image" as const, src: "./devassist-dependency.png", caption: "Dependency Audit" },
+      { kind: "image" as const, src: "./devassist-security.png", caption: "Security Audit" },
+      { kind: "image" as const, src: "./devassist-devops.png", caption: "DevOps Pipeline" },
+      { kind: "image" as const, src: "./devassist-unittest.png", caption: "Unit Test Generator" },
+      { kind: "image" as const, src: "./devassist-readme.png", caption: "README & Docs Writer" },
+      { kind: "image" as const, src: "./devassist-import.png", caption: "Project Import" },
+      { kind: "image" as const, src: "./devassist-auth.png", caption: "Authentication" },
+      { kind: "image" as const, src: "./devassist-login.png", caption: "Login Page" },
     ],
   },
 ];
@@ -969,6 +979,16 @@ function DevAssistCard() {
     { src: "./devassist-docs.png", caption: "Knowledge Base" },
     { src: "./devassist-review.png", caption: "AI Code Review" },
     { src: "./devassist-search.png", caption: "Semantic Search" },
+    { src: "./devassist-orchestration.png", caption: "Orchestration & Analytics" },
+    { src: "./devassist-workspace.png", caption: "File Explorer & Workspace" },
+    { src: "./devassist-dependency.png", caption: "Dependency Audit" },
+    { src: "./devassist-security.png", caption: "Security Audit" },
+    { src: "./devassist-devops.png", caption: "DevOps Pipeline" },
+    { src: "./devassist-unittest.png", caption: "Unit Test Generator" },
+    { src: "./devassist-readme.png", caption: "README & Docs Writer" },
+    { src: "./devassist-import.png", caption: "Project Import" },
+    { src: "./devassist-auth.png", caption: "Authentication" },
+    { src: "./devassist-login.png", caption: "Login Page" },
   ];
   const curImg = media[activeImg];
 
