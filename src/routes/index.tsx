@@ -914,16 +914,16 @@ function ProjectBlock({ p, flipped }: { p: (typeof PROJECTS)[number]; flipped: b
   );
 }
 
-/* ================= ML LAB (Churn + Sentiment with charts) ================= */
+/* ================= ML LAB (DevAssist + Sentiment with charts) ================= */
 function MLLab() {
   return (
     <section className="relative py-24">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="mono-label mb-8 flex items-center gap-3">
-          <span className="scan-line w-8" /> ML Lab · Deep Learning Projects
+          <span className="scan-line w-8" /> AI & ML Lab · Agentic & Deep Learning Projects
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <ChurnCard />
+          <DevAssistCard />
           <SentimentCard />
         </div>
       </div>
@@ -931,10 +931,10 @@ function MLLab() {
   );
 }
 
-function ChurnCard() {
-  // Simulated training curve: accuracy over 20 epochs
-  const acc = [0.62, 0.71, 0.78, 0.82, 0.84, 0.855, 0.867, 0.878, 0.885, 0.892, 0.897, 0.901, 0.905, 0.908, 0.910, 0.912, 0.913, 0.9135, 0.9138, 0.914];
-  const loss = [0.68, 0.58, 0.49, 0.42, 0.38, 0.34, 0.31, 0.28, 0.26, 0.24, 0.22, 0.21, 0.20, 0.19, 0.185, 0.182, 0.18, 0.178, 0.177, 0.176];
+function DevAssistCard() {
+  // Simulated RAG retrieval precision & evaluation curve over 20 query benchmarks
+  const acc = [0.68, 0.74, 0.81, 0.85, 0.88, 0.895, 0.908, 0.916, 0.923, 0.929, 0.934, 0.938, 0.941, 0.943, 0.945, 0.946, 0.947, 0.9475, 0.9478, 0.948];
+  const loss = [0.62, 0.52, 0.44, 0.38, 0.33, 0.29, 0.26, 0.24, 0.22, 0.20, 0.19, 0.18, 0.17, 0.165, 0.16, 0.158, 0.155, 0.153, 0.151, 0.15];
   const W = 320, H = 140, P = 8;
   const pathFrom = (arr: number[], min: number, max: number) =>
     arr
@@ -949,32 +949,32 @@ function ChurnCard() {
     <div className="panel-glow p-8">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <div className="mono-label ion-text">/ 03 · Machine Learning</div>
-          <h3 className="display text-3xl mt-2">Customer Churn</h3>
+          <div className="mono-label ion-text">/ 03 · Agentic AI · RAG</div>
+          <h3 className="display text-3xl mt-2">DevAssist</h3>
           <p className="mt-1 text-[color:var(--muted-foreground)] italic">
-            Artificial Neural Network · TensorFlow / Keras
+            Autonomous Multi-Agent Platform · LangGraph / Groq
           </p>
         </div>
         <div className="text-right">
-          <div className="mono-label">Test Accuracy</div>
-          <div className="display text-3xl ion-text">91.4%</div>
+          <div className="mono-label">RAG Precision</div>
+          <div className="display text-3xl ion-text">94.8%</div>
         </div>
       </div>
 
       <p className="mt-5 text-[color:var(--foreground)]/85 leading-relaxed">
-        ANN predicting customer churn from behavioral & account data — preprocessing, feature encoding, hyperparameter tuning, confusion-matrix diagnostics.
+        Autonomous multi-agent AI software engineering platform — understanding, analyzing, documenting, reviewing, and explaining entire GitHub repositories with semantic search and AST parsing.
       </p>
 
       {/* Chart */}
       <div className="mt-6 panel p-4">
         <div className="flex items-center justify-between mb-2">
-          <div className="mono-label">Training Curves · 20 epochs</div>
+          <div className="mono-label">Benchmark Curves · 20 Query Runs</div>
           <div className="flex items-center gap-3 mono-label">
-            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[color:var(--ion)]" /> Accuracy</span>
-            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[color:var(--plasma)]" /> Loss</span>
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[color:var(--ion)]" /> Precision</span>
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[color:var(--plasma)]" /> Latency</span>
           </div>
         </div>
-        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Training accuracy and loss over epochs">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Retrieval precision and latency over benchmark runs">
           <defs>
             <linearGradient id="accFill" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0%" stopColor="var(--ion)" stopOpacity="0.35" />
@@ -991,22 +991,22 @@ function ChurnCard() {
         </svg>
       </div>
 
-      {/* Confusion matrix */}
+      {/* Confusion matrix / metrics */}
       <div className="mt-5 grid grid-cols-3 gap-2">
-        <ConfCell label="TP" value="782" tone="ion" />
-        <ConfCell label="FP" value="41" tone="dim" />
-        <ConfCell label="FN" value="65" tone="dim" />
-        <ConfCell label="TN" value="912" tone="plasma" />
-        <div className="col-span-3 mono-label text-center pt-1">Confusion Matrix · held-out set</div>
+        <ConfCell label="Agents" value="6+" tone="ion" />
+        <ConfCell label="AST Parse" value="<50ms" tone="dim" />
+        <ConfCell label="RAG Index" value="100%" tone="dim" />
+        <ConfCell label="Code Review" value="Instant" tone="plasma" />
+        <div className="col-span-3 mono-label text-center pt-1">Platform Metrics · multi-agent swarm</div>
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
-        {["Python", "TensorFlow", "Keras", "Scikit-Learn"].map((t) => (
+        {["LangGraph", "LangChain", "Groq · Llama-3", "React", "TypeScript", "RAG"].map((t) => (
           <span key={t} className="chip">{t}</span>
         ))}
       </div>
       <div className="mt-5">
-        <a href="https://github.com/yashvardhan7319/ANN_CLASSIFICATION_CHURN" target="_blank" rel="noreferrer" className="btn-ghost hover:border-[color:var(--ion)] hover:text-[color:var(--ion)]">
+        <a href="https://github.com/yashvardhan7319/DevAssist" target="_blank" rel="noreferrer" className="btn-ghost hover:border-[color:var(--ion)] hover:text-[color:var(--ion)]">
           <Github className="h-4 w-4" /> GitHub <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       </div>
