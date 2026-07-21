@@ -48,7 +48,7 @@ const PHONE = "+91 8789195204";
 const LINKEDIN = "https://linkedin.com/in/yash-vardhan-295578342";
 const GITHUB = "https://github.com/yashvardhan7319";
 const RESUME =
-  "https://drive.google.com/file/d/1CEfyQagwz-7V7ORHLDUisyQRg4k61uGL/view?usp=sharing";
+  "https://drive.google.com/file/d/1te4YzXiGSzS4As1j8Ne24D_6JcQaqqhO/view?usp=sharing";
 const gmailCompose = (subject?: string) => {
   const url = new URL("https://mail.google.com/mail/");
   url.searchParams.set("view", "cm");
