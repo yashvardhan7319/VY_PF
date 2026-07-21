@@ -242,6 +242,35 @@ const PROJECTS = [
       { kind: "image" as const, src: "./login_page.png", caption: "Auth" },
     ],
   },
+  {
+    id: "devassist",
+    n: "03",
+    name: "DevAssist",
+    year: "2026",
+    tagline: "Autonomous multi-agent AI software engineering platform with repository intelligence & RAG.",
+    role: "Solo · Design + Engineering",
+    status: "Live",
+    github: "https://github.com/yashvardhan7319/DevAssist",
+    problem:
+      "Understanding large, unfamiliar codebases requires hours of manual exploration. Traditional tools lack deep architectural reasoning and multi-agent coordination.",
+    approach:
+      "An autonomous swarm powered by LangGraph, LangChain, and Groq (Llama-3) that parses ASTs, generates architecture diagrams, reviews code, and answers complex queries over entire repositories via semantic RAG.",
+    impact: [
+      "Sub-50ms AST parsing & indexing",
+      "Autonomous code review & refactoring",
+      "Interactive architecture visualization",
+      "Semantic search across entire codebases",
+    ],
+    tech: ["React", "TypeScript", "LangGraph", "LangChain", "Groq · Llama-3", "Node.js", "SQLite"],
+    media: [
+      { kind: "image" as const, src: "./devassist-dashboard.png", caption: "Multi-Agent Dashboard" },
+      { kind: "image" as const, src: "./devassist-chat.png", caption: "AI Repository Chat" },
+      { kind: "image" as const, src: "./devassist-architecture.png", caption: "Architecture Generator" },
+      { kind: "image" as const, src: "./devassist-docs.png", caption: "Knowledge Base" },
+      { kind: "image" as const, src: "./devassist-review.png", caption: "AI Code Review" },
+      { kind: "image" as const, src: "./devassist-search.png", caption: "Semantic Search" },
+    ],
+  },
 ];
 
 const JOURNEY = [
@@ -932,6 +961,17 @@ function MLLab() {
 }
 
 function DevAssistCard() {
+  const [activeImg, setActiveImg] = useState(0);
+  const media = [
+    { src: "./devassist-dashboard.png", caption: "Multi-Agent Dashboard" },
+    { src: "./devassist-chat.png", caption: "AI Repository Chat" },
+    { src: "./devassist-architecture.png", caption: "Architecture Generator" },
+    { src: "./devassist-docs.png", caption: "Knowledge Base" },
+    { src: "./devassist-review.png", caption: "AI Code Review" },
+    { src: "./devassist-search.png", caption: "Semantic Search" },
+  ];
+  const curImg = media[activeImg];
+
   // Simulated RAG retrieval precision & evaluation curve over 20 query benchmarks
   const acc = [0.68, 0.74, 0.81, 0.85, 0.88, 0.895, 0.908, 0.916, 0.923, 0.929, 0.934, 0.938, 0.941, 0.943, 0.945, 0.946, 0.947, 0.9475, 0.9478, 0.948];
   const loss = [0.62, 0.52, 0.44, 0.38, 0.33, 0.29, 0.26, 0.24, 0.22, 0.20, 0.19, 0.18, 0.17, 0.165, 0.16, 0.158, 0.155, 0.153, 0.151, 0.15];
@@ -964,6 +1004,41 @@ function DevAssistCard() {
       <p className="mt-5 text-[color:var(--foreground)]/85 leading-relaxed">
         Autonomous multi-agent AI software engineering platform — understanding, analyzing, documenting, reviewing, and explaining entire GitHub repositories with semantic search and AST parsing.
       </p>
+
+      {/* Interactive Screenshot Gallery */}
+      <div className="mt-6">
+        <div className="relative panel-glow p-2 overflow-hidden">
+          <div className="relative aspect-[16/10] overflow-hidden bg-black/60 rounded">
+            <img
+              key={curImg.src}
+              src={curImg.src}
+              alt={`DevAssist — ${curImg.caption}`}
+              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-3 left-3 mono-label text-[color:var(--foreground)]">
+              {curImg.caption}
+            </div>
+          </div>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {media.map((m, i) => (
+            <button
+              key={m.src}
+              onClick={() => setActiveImg(i)}
+              aria-label={`Show ${m.caption}`}
+              className={`relative h-14 w-20 overflow-hidden border transition-all rounded ${
+                i === activeImg
+                  ? "border-[color:var(--ion)] ring-glow"
+                  : "border-[color:var(--border)] opacity-60 hover:opacity-100"
+              }`}
+            >
+              <img src={m.src} alt="" className="h-full w-full object-cover" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* Chart */}
       <div className="mt-6 panel p-4">
